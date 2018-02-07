@@ -25,6 +25,28 @@ if (isset($_SESSION['message'])){
 <textarea name='content' rows='5' cols='40' wrap=VIRTUAL></textarea>
 <p><input type='submit' value='submit'/></p>
 </form>
+ <?php
+$posts = show_posts($_SESSION['userid']);
  
+if (count($posts)){
+?>
+<table border='1' cellspacing='0' cellpadding='5' width='500'>
+<?php
+foreach ($posts as $key => $list){
+    echo "<tr valign='top'>\n";
+    echo "<td>".$list['id_user'] ."</td>\n";
+    echo "<td>".$list['content'] ."<br/>\n";
+    echo "<small>".$list['created_date'] ."</small></td>\n";
+    echo "</tr>\n";
+}
+?>
+</table>
+<?php
+}else{
+?>
+<p><b>You haven't posted anything yet!</b></p>
+<?php
+}
+?>
 </body>
 </html>
