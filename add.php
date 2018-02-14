@@ -7,7 +7,7 @@ $userid = $_SESSION['id'] = 1;
 $body = substr($_POST['content'],0,140);
  
 add_post();
-$_SESSION['message'] = "Your post has been added!";
+$_SESSION['message'];
  
 header("Location:index.php");
 ?>
