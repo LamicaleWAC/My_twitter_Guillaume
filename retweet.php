@@ -3,10 +3,9 @@ session_start();
 include_once("header.php");
 include_once("functions.php");
  
-$userid = $_SESSION['id'] = 1;
-$body = substr($_POST['content'],0,140);
+$id = $_POST['id'] = 1;
+$tweetid = $_POST['retweet'];
+retweet($id, $tweetid);
  
-add_post();
-
 header("Location:index.php");
 ?>

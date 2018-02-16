@@ -47,18 +47,20 @@ foreach ($posts as $key => $list){
     echo "<small>".$list['created_date'] ."</small></td>\n";
     echo "<td>";
     ?>
-    <form method='post' action='favoris.php'> <?php
-    echo "<input id='prodId' name='prodId' type='hidden' value='" .$list['id'] . "'>";
-    echo "<form action='love.php' method='post'>
+    <?php
+     echo "<form action='retweet.php' method='post'>
     <input type='submit'>";
+    echo "<input id='retweet' name='retweet' type='hidden' value='" .$list['id'] . "'>";
+    echo "<input type='hidden' name='userId' value='" .$_SESSION['userid'] . "'>";
     echo "</td>";
     echo "<td>";
         ?>
+
     </form>
-    <form method='post' action='retweet.php'>
+    <form method='post' action='delete.php'>
         <?php
-    echo "<input id='prodId' name='prodId' type='hidden' value='" .$list['id'] . "'>";
-    echo "<form action='retweet.php' method='post'>
+    echo "<input id='delete' name='delete' type='hidden' value='" .$list['id'] . "'>";
+    echo "<form action='delete.php' method='post'>
     <input type='submit'>"; 
     echo "</td>";  
     echo "<td>";
