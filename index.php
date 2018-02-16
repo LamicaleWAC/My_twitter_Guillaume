@@ -61,15 +61,18 @@ foreach ($posts as $key => $list){
         <?php
     echo "<input id='delete' name='delete' type='hidden' value='" .$list['id'] . "'>";
     echo "<form action='delete.php' method='post'>
-    <input type='submit'>"; 
+    <input type='submit' value='del'>"; 
     echo "</td>";  
     echo "<td>";
         ?></form>
     <form method='post' action='repondre.php'>
         <?php
-    echo "<input id='prodId' name='prodId' type='hidden' value='" .$list['id'] . "'>";
+    echo "<input id='repondre' name='repondre' type='hidden' value='" .$list['id'] . "'>";
     echo "<form action='repondre.php' method='post'>
-    <input type='submit'>"; ?></form> <?php
+    <input type='submit' value='repondre'>"; 
+    ?>    
+    </form>
+    <?php
     echo "</td>";
     echo "</tr>\n";
 }

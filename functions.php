@@ -27,7 +27,7 @@ function show_posts($userid){
 function retweet($id, $tweetid){
     $posts = array();
     $db = new bdd();
-    $query = $db->getBdd()->prepare('INSERT INTO retweets (id_user, id_tweet) VALUES ($id, $tweetid)');
+    $query = $db->getBdd()->prepare("INSERT INTO retweets (id_user, id_tweet) VALUES ('$id', '$tweetid')");
     $query->execute();
 }
 
