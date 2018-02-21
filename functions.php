@@ -29,6 +29,8 @@ function retweet($id, $tweetid){
     $db = new bdd();
     $query = $db->getBdd()->prepare("INSERT INTO retweets (id_user, id_tweet) VALUES ('$id', '$tweetid')");
     $query->execute();
+    $query = $db->getBdd()->prepare("INSERT INTO tweet (id_user, id) VALUES ('$id', '$tweedtid')");
+    $query->execute();
 }
 
 function delete($idDeleteTweet){
